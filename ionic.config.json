@@ -1,0 +1,7 @@
+{
+  "name": "MySideBarProject",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

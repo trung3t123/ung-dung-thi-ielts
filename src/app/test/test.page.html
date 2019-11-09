@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back" (click)="goBack()"></ion-icon>
+        <span padding>Đề thi</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<img src="/assets/shapes.svg" alt="" />
+<ion-content padding>
+  
+  <div>
+    <span>Số lượng câu hỏi: </span><span>200</span>
+  </div>
+  <div>
+    <span>Phần I: Reading </span><span>100</span>
+  </div>  
+  <div>
+    <span>Phần II: Listening </span><span>100</span>
+  </div>
+  <div>Thời gian: 200 phút</div>
+  <ion-button [routerLink]="['/question-detail']">Bắt đầu</ion-button>
+</ion-content>
