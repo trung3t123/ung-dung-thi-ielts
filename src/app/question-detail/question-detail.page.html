@@ -1,18 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>question-detail</ion-title>
+    <!--<ion-title>question</ion-title>-->
+    <ion-title *ngIf="timer">
+      <ion-item class="no-bottom-border item">
+          <p style="font-size: 20px !important;">Thời gian: </p>
+        <button ion-button *ngIf="timeInSeconds && timeInSeconds > 0" large full clear class="timer-button timer-text">{{timer.displayTime}}</button>
+      </ion-item>
+    </ion-title>  
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<div>
-    <ion-icon ios="ios-alarm" md="md-alarm"></ion-icon>
-    <p id="demo"></p>
-
-  <div class="wrapper">
-    <div class="pie spinner"></div>
-    <div class="pie filler"></div>
-    <div class="mask"></div>
-  </div>
-</div>
+  <div class="center">Câu số: <span>{{i+1}}</span></div>
+  <div class="ion-text-center size-20px">{{question[i].question}}</div>
+  <form class="size-20px">
+    <button name="answer" id="a" (click)="onclick()"> {{question[i].a}}</button><br>
+    <button name="answer" id="b" (click)="onclick()"> {{question[i].b}}</button><br>
+    <button name="answer" id="c" (click)="onclick()"> {{question[i].c}}</button><br>
+    <button name="answer" id="d" (click)="onclick()"> {{question[i].d}}</button>
+  </form>
 </ion-content>
+<footer style="height: 15%;" >
+  <ion-icon name="arrow-dropleft" (click)="back()"></ion-icon>
+  <ion-icon name="arrow-dropright" style="float: right;" (click)="next()"></ion-icon>
+</footer>
+<script>
+  function onclick() {
+    document.getElementsByName('answer').style.background='blue' ;
+  };
+</script>
