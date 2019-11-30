@@ -1,18 +1,20 @@
 
 import {Component, Input} from '@angular/core';
 import {ITimer} from './itimer';
+import {AlertController} from '@ionic/angular'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-question-detail',
   templateUrl: './question-detail.page.html',
   styleUrls: ['./question-detail.page.scss'],
 })
-export class TimerComponent {
+export class QuestionDetailPage {
  
   @Input() timeInSeconds: number;
   public timer: ITimer;
   public i = 0;
 
-  constructor() {
+  constructor(private alertCtrl: AlertController, private router: Router) {
   }
 
   ngOnInit() {
@@ -82,7 +84,7 @@ export class TimerComponent {
   public question = [
     {
       question: 'question 1 question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1question 1 ',
-      a: 'Đáp án là A1 Đáp án là A1 Đáp án là A1 Đáp án là A1 Đáp án là A1 Đáp án là A1',
+      a: ' là A1 Đáp án là A1 Đáp án là A1 Đáp án là A1 Đáp án là A1 Đáp án là A1',
       b: 'B1',
       c: 'C1',
       d: 'D1'
@@ -132,5 +134,38 @@ export class TimerComponent {
           this.i--;
       }
   }
- 
+  changeBackground(id: string) {
+      console.log(id);
+      for(var i = 0; i < document.getElementsByClassName('answer').length; ++i) {  
+      document.getElementsByName('answer')[i].style.background='#E6E6E6';
+    }
+    document.getElementById(id).style.background='#01DF01';
+    //get answer from user
+    console.log(document.getElementById(id).innerHTML.trim());
+  }
+  async presentConfirm() {
+    let alert = this.alertCtrl.create({
+        header: 'Kết thúc',
+        message: 'Bạn có muốn kết thúc?',
+        buttons: [
+            {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {  
+            console.log('Cancel clicked');
+            }
+            },
+            {
+            text: 'OK',
+            handler: () => {
+            console.log('OK clicked');
+            
+                this.router.navigate(['/result'])
+              
+              }
+            }
+        ]
+        });
+        (await alert).present();
+    }
 }

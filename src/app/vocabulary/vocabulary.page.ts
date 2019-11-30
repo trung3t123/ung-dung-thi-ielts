@@ -15,5 +15,5 @@ export class VocabularyPage implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }

@@ -8,12 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-list lines="none">
-    <ion-button>Câu chủ động - Câu bị động</ion-button>
+  <ion-list>
+    <ion-button (click)="navigateActivePassive()">Câu chủ động - Câu bị động</ion-button>
     <br/>
-    <ion-button>Câu trực tiếp - Câu gián tiếp</ion-button>
+    <ion-button (click)="navigateDirect()">Câu trực tiếp - Câu gián tiếp</ion-button>
     <br/>
-    <ion-button>Câu so sánh</ion-button>
+    <ion-button (click)="navigateCompare()">Câu so sánh</ion-button>
     <br/>
   </ion-list>
 </ion-content>
