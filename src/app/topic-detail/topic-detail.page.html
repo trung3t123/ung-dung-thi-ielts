@@ -1,22 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-button style="float: right;" (click)="next()"><span>Câu tiếp</span> <span><ion-icon name="arrow-dropright"></ion-icon></span></ion-button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-button style="float: right;" (click)="next()"><span>Câu tiếp</span> <span><ion-icon name="arrow-dropright"></ion-icon></span></ion-button>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
-  <div class="center">Câu số: <span>{{i+1}}</span></div>
-  <div class="ion-text-center size-20px">{{question[i].question}}</div>
-  <form class="size-20px">
-    <button class="answer" name="answer" id="a" (click)="changeBackground('a')"> {{question[i].a}}</button><br>
-    <button class="answer" name="answer" id="b" (click)="changeBackground('b')"> {{question[i].b}}</button><br>
-    <button class="answer" name="answer" id="c" (click)="changeBackground('c')"> {{question[i].c}}</button><br>
-    <button name="answer" class="answer" id="d" (click)="changeBackground('d')"> {{question[i].d}}</button>
-  </form>
-
+    <div>
+        <div class="center">Câu số: <span>{{i+1}}</span></div>
+        <div class="ion-text-center size-20px">{{question[i].content}}</div>
+        <form class="size-20px">
+            <button class="answer" name="answer" id="a" (click)="changeBackground('a')"> {{question[i].answera}}</button><br>
+            <button class="answer" name="answer" id="b" (click)="changeBackground('b')"> {{question[i].answerb}}</button><br>
+            <button class="answer" name="answer" id="c" (click)="changeBackground('c')"> {{question[i].answerc}}</button><br>
+            <button name="answer" class="answer" id="d" (click)="changeBackground('d')"> {{question[i].answerd}}</button>
+        </form>
+    </div>
 </ion-content>
 <footer class="footer">
-   <ion-button id="check" class="check" (click)="checkAnswer()">Kiểm tra</ion-button>
+    <ion-button id="check" class="check" (click)="checkAnswer()">Kiểm tra</ion-button>
 </footer>
-
