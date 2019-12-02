@@ -7,7 +7,7 @@ from sqlalchemy import text
 import os 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://trung:trung@localhost/englishQuest'
+app.config['DATABASE_URL'] = 'postgresql://trung:trung@localhost/englishQuest'
 app.config['SQLALCHEMY_TRACKING_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
