@@ -13,24 +13,25 @@ import {Question} from 'src/app/models/question'
 export class TopicDetailPage implements OnInit {
   selectedQuestion :Question;
   questions: Question[];
+  question : any;
 
   constructor(private alertCtrl: AlertController,private questionService: QuestionServiceService,private http: HttpClient) { }
   public i = 0;
   public result ;
 
-  loadQuestionFromService(): Question[] {
+  loadQuestionFromService(): void {
     this.questionService.getQuestionDetails().subscribe(
       (updatedQuestion) => { 
         this.questions = updatedQuestion;
         console.log(`this.question =  ${JSON.stringify(this.questions)}`)
       }
     );
-    return this.questions
   }
   ngOnInit() {
+    this.loadQuestionFromService();
   }
 
-  public question = this.loadQuestionFromService()
+  
 
   // public question = [
   //   {

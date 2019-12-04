@@ -5,15 +5,18 @@
 </ion-header>
 
 <ion-content>
-    <div>
-        <div class="center">Câu số: <span>{{i+1}}</span></div>
+    <div *ngFor="let eachQuestion of questions">
+        <ion-list>
+            {{eachQuestion}}
+        </ion-list>
+        <!-- <div class="center">Câu số: <span>{{i+1}}</span></div>
         <div class="ion-text-center size-20px">{{question[i].content}}</div>
         <form class="size-20px">
             <button class="answer" name="answer" id="a" (click)="changeBackground('a')"> {{question[i].answera}}</button><br>
             <button class="answer" name="answer" id="b" (click)="changeBackground('b')"> {{question[i].answerb}}</button><br>
             <button class="answer" name="answer" id="c" (click)="changeBackground('c')"> {{question[i].answerc}}</button><br>
             <button name="answer" class="answer" id="d" (click)="changeBackground('d')"> {{question[i].answerd}}</button>
-        </form>
+        </form> -->
     </div>
 </ion-content>
 <footer class="footer">

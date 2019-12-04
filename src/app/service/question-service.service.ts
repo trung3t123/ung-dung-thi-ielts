@@ -8,7 +8,8 @@ import { catchError, tap, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class QuestionServiceService {
-  private url ='http://127.0.0.1:5000/showquestion';
+  private url ='https://server-ielts-app.herokuapp.com/showquestion';
+  
   getQuestionDetails() : Observable<Question[]> { 
     return this.http.get<Question[]>(this.url).pipe(
       tap(recievedQuestion => console.log(`recivedQuestion = ${JSON.stringify(recievedQuestion)}`)),
